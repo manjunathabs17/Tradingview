@@ -1,0 +1,100 @@
+<!-- =============================================1====================================================================== -->
+<!-- <div class="iframe-container">
+  <div class="iframe-wrapper" *ngFor="let iframe of iframes">
+    <iframe
+      src="https://in.investing.com/indices/sensex"
+      [ngClass]="{ fullscreen: iframe.isFullScreen }"
+    ></iframe>
+    <button class="button" (click)="toggleFullScreen(iframe)">
+      Toggle Full Screen
+    </button>
+  </div>
+</div> -->
+<!-- ====================================================2=========================================================== -->
+
+<!-- [class.fullscreen]="isIframe4FullScreen" -->
+
+<div class="home_page">
+  <div class="page1">
+    <div class="iframe-container">
+      <input
+        class="input_box"
+        type="text"
+        [(ngModel)]="searchQuery"
+        (keydown.enter)="search()"
+        placeholder="Enter URL"
+      />
+      <span>
+        <button class="confirm_button" (click)="loadWebPage()">
+          Confirm
+        </button></span
+      >
+      <button class="button" (click)="toggleFullScreen(1)">Fullscreen</button>
+    </div>
+
+    <!-- <div>
+      <input type="text" [(ngModel)]="urlInput" placeholder="Enter URL" />
+      <button (click)="loadUrl()">Load URL</button>
+    </div>
+    <div>
+      <iframe [src]="url"></iframe>
+    </div> -->
+
+    <!-- <iframe [src]="searchUrl"></iframe> -->
+
+    <iframe id="iframe1" src="https://google.com/search?igu=1"></iframe>
+
+    <!-- <iframe
+      id="iframe2"
+      src="https://in.investing.com/indices/s-p-cnx-nifty"
+    ></iframe> -->
+    <!-- <iframe
+      id="iframe2"
+      src="https://in.investing.com/indices/us-spx-500"
+    ></iframe> -->
+  </div>
+
+  <div class="page2">
+    <div class="iframe-container">
+      <input class="input_box" type="text" placeholder="Enter URL" />
+      <span> <button class="confirm_button">Confirm</button></span>
+      <button class="button" (click)="toggleFullScreen(2)">Fullscreen</button>
+      <!-- <button class="exit_button" (click)="exitFullScreen()">
+        Exit Full Screen
+      </button> -->
+    </div>
+    <iframe
+      id="iframe2"
+      src="https://in.investing.com/indices/us-spx-500"
+    ></iframe>
+  </div>
+</div>
+
+<div class="home_page">
+  <div class="page3">
+    <div>
+      <button class="button" (click)="toggleFullScreen(3)">Fullscreen</button>
+    </div>
+    <iframe
+      id="iframe3"
+      src="https://in.investing.com/indices/s-p-cnx-nifty"
+    ></iframe>
+  </div>
+  <div class="page4">
+    <div>
+      <button class="button" (click)="toggleFullScreen(4)">Fullscreen</button>
+    </div>
+    <iframe
+      id="iframe4"
+      src="https://in.investing.com/equities/state-bank-of-india"
+      [class.fullscreen]="isIframe4FullScreen"
+    ></iframe>
+  </div>
+
+  <!-- <div class="grid-container">
+      <div *ngFor="let box of boxes" class="box" (click)="toggleBox(box)">
+        {{ box.content }}
+      </div>
+    </div> -->
+</div>
+<div #fullscreenContainer class="fullscreen-container"></div>
